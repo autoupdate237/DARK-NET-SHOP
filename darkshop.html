@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARK NET XD — Premium Gaming Experience</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0f1720;
+      --panel-outline: #0ff6ff;
+      --accent: #5b1560;
+      --muted: #9aa3ad;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.04);
+      --white: #fff;
+      --shadow: 0 10px 30px rgba(2,6,23,0.7);
+      --section-padding: 80px 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: 
+        radial-gradient(ellipse at 10% 10%, rgba(255,255,255,0.02), transparent 10%),
+        linear-gradient(180deg, rgba(7,12,18,1) 0%, rgba(10,14,20,1) 100%);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      background: rgba(10, 14, 20, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Top-right purchase pill */
+    .topbar {
+      position: fixed;
+      right: 18px;
+      top: 18px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill {
+      background: linear-gradient(135deg, rgba(91,21,96,1), rgba(54,13,70,1));
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      box-shadow: 0 6px 20px rgba(91,21,96,0.45);
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.03);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .pill:active {
+      transform: translateY(1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 120px;
+      padding-bottom: var(--section-padding);
+    }
+
+    .wrap {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr 560px;
+      align-items: center;
+      min-height: calc(100vh - 96px);
+    }
+
+    .hero-left {
+      padding-left: 18px;
+      max-width: 760px;
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 6px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 58px;
+      margin: 0 0 12px 0;
+      line-height: 0.98;
+      letter-spacing: 6px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-shadow: 0 6px 30px rgba(8,12,20,0.6);
+    }
+
+    .tag {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 0;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-watch {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .btn-buy {
+      background: linear-gradient(90deg, #3b0b40, #660f64);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 12px 30px rgba(99,28,120,0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Right panel */
+    .panel-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+      pointer-events: none;
+    }
+
+    .panel {
+      width: 520px;
+      height: 320px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(10,16,22,0.8), rgba(6,10,14,0.5));
+      box-shadow: 0 20px 50px rgba(6,10,20,0.7);
+      border: 1px solid rgba(0,255,255,0.06);
+      transform: rotateY(-18deg) rotateZ(-4deg) translateZ(0);
+      transition: transform .7s cubic-bezier(.2,.9,.2,1), box-shadow .4s;
+      position: relative;
+      overflow: visible;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 14px;
+      filter: blur(10px);
+      background: linear-gradient(90deg, rgba(0,255,255,0.06), rgba(88,200,255,0.02));
+      z-index: -1;
+    }
+
+    .panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      transform: translateZ(40px) scale(1.02);
+    }
+
+    .panel:hover {
+      transform: rotateY(0deg) rotateZ(-2deg) translateY(-8px) translateZ(10px);
+      pointer-events: auto;
+    }
+
+    /* Decorative glow */
+    .glow {
+      position: absolute;
+      right: calc(8px + 0%);
+      top: 40%;
+      width: 420px;
+      height: 220px;
+      transform: rotate(-8deg);
+      filter: blur(40px) saturate(140%);
+      opacity: 0.9;
+      z-index: -2;
+      background: radial-gradient(ellipse at center, rgba(12,209,255,0.12), transparent 35%),
+                  radial-gradient(ellipse at 20% 80%, rgba(90,20,130,0.06), transparent 40%);
+      border-radius: 30%;
+      pointer-events: none;
+    }
+
+    /* Features Section */
+    .features {
+      padding: var(--section-padding);
+      background: rgba(7, 12, 18, 0.5);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: var(--glass);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: var(--panel-outline);
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      padding: var(--section-padding);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .pricing-card {
+      background: var(--glass);
+      border-radius: 12px;
+      padding: 40px 30px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .pricing-card.popular {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(91,21,96,0.2);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      padding: 5px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .price {
+      font-size: 48px;
+      font-weight: 800;
+      margin: 20px 0;
+    }
+
+    .price span {
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    .pricing-features li {
+      padding: 8px 0;
+      color: var(--muted);
+    }
+
+    .pricing-features li i {
+      color: var(--panel-outline);
+      margin-right: 10px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: var(--section-padding);
+      background: rgba(7, 12, 18, 0.5);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: var(--glass);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .author-info h4 {
+      margin: 0 0 5px 0;
+    }
+
+    .author-info p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* FAQ Section */
+    .faq {
+      padding: var(--section-padding);
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: var(--glass);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-answer p {
+      padding-bottom: 20px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(7, 12, 18, 0.8);
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--glass);
+      color: var(--white);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      background: var(--accent);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Subtle floating stars in background */
+    .stars {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.04) 50%, transparent 51%),
+        radial-gradient(1px 1px at 70% 10%, rgba(255,255,255,0.03) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,0.03) 50%, transparent 51%),
+        radial-gradient(0.8px 0.8px at 80% 70%, rgba(255,255,255,0.02) 50%, transparent 51%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* small footer-ish note */
+    .small {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .wrap {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 18px;
+        min-height: calc(100vh - 36px);
+      }
+
+      .panel-wrap {
+        order: -1;
+        justify-content: flex-end;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .panel {
+        width: 420px;
+        height: 260px;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 14, 20, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.03);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brand {
+        letter-spacing: 3px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 32px;
+        letter-spacing: 4px;
+      }
+
+      .panel {
+        width: 320px;
+        height: 200px;
+        transform: none;
+        rotate: 0;
+      }
+
+      .panel img {
+        transform: none;
+      }
+
+      .panel-wrap {
+        justify-content: center;
+      }
+
+      .topbar {
+        right: 10px;
+        top: 10px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">DARK NET XD</a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#features"></a>
+      <a href="#pricing"></a>
+      <a href="#testimonials"></a>
+      <a href="#faq"></a>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <a href="#pricing" class="pill">PURCHASE</a>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="container wrap">
+      <section class="hero-left">
+        <div class="brand">DARK NET XD</div>
+        <h1>DARK NET XD</h1>
+        <div class="tag">Empower your Free Fire battles with the ultimate gaming advantage</div>
+
+        <div class="cta-row">
+          <button class="btn btn-watch" id="watchBtn">WATCH DEMO</button>
+          <a 
+  href="https://discord.gg/xzSgqmjFkJ" 
+  target="_blank" 
+  class="btn btn-buy">
+  BUY NOW
+</a>
+
+        </div>
+
+        <div class="small">Premium panel • Aimbot head 100% • DARK NET XD theme • Undetectable</div>
+      </section>
+
+      <aside class="panel-wrap" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="panel" id="tiltPanel">
+          <!-- Replace the src with your panel image file -->
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Premium panel preview" />
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Powerful Features</h2>
+        <p>Experience the next level of gaming with our advanced toolset designed for competitive players</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-crosshairs"></i>
+          </div>
+          <h3>Precision Aimbot</h3>
+          <p>Advanced targeting system with customizable settings for headshots and body shots with 100% accuracy.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>ESP & Radar</h3>
+          <p>See enemies through walls with detailed information including distance, health, and equipment.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Anti-Detection</h3>
+          <p>Advanced stealth technology ensures your account remains safe with our undetectable system.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>No Recoil</h3>
+          <p>Eliminate weapon recoil completely for perfect accuracy in any combat situation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-running"></i>
+          </div>
+          <h3>Speed Hack</h3>
+          <p>Move faster than your opponents with customizable speed settings for tactical advantage.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-sync"></i>
+          </div>
+          <h3>Auto Update</h3>
+          <p>Our software automatically updates to stay compatible with the latest game patches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Choose Your Plan</h2>
+        <p>Flexible pricing options to suit every player's needs and budget</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Basic Panel</h3>
+          <div class="price">$15<span>/six month</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Precision Aimbot</li>
+            <li><i class="fas fa-check"></i> Basic ESP</li>
+            <li><i class="fas fa-check"></i> Basic Support</li>
+          </ul>
+          <a 
+  href="https://discord.gg/xzSgqmjFkJ" 
+  target="_blank" 
+  class="btn btn-buy">
+  Select Plan
+</a>
+
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">MOST POPULAR</div>
+          <h3>Premium Panel</h3>
+          <div class="price">$20<span>/six month</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Aimbot Head</li>
+            <li><i class="fas fa-check"></i> Aimbot Neck</li>
+            <li><i class="fas fa-check"></i> Aimbot Drag</li>
+            <li><i class="fas fa-check"></i> Advanced ESP</li>
+            <li><i class="fas fa-check"></i> Sniper Scope</li>
+            <li><i class="fas fa-check"></i> Female Fix</li>
+            <li><i class="fas fa-check"></i> Camera Left</li>
+            <li><i class="fas fa-check"></i> Fast Landing</li>
+            <li><i class="fas fa-check"></i> Emulator Bypass</li>
+            <li><i class="fas fa-check"></i> Sniper Faster Switch</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+            <li><i class="fas fa-check"></i> 24/7 Premium Support</li>
+          </ul>
+          <a 
+  href="https://discord.gg/xzSgqmjFkJ" 
+  target="_blank" 
+  class="btn btn-buy">
+  Select Plan
+</a>
+
+        </div>
+        <div class="pricing-card">
+          <h3>Basic Panel</h3>
+          <div class="price">$20<span>/life time</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Precision Aimbot</li>
+            <li><i class="fas fa-check"></i> Basic ESP</li>
+            <li><i class="fas fa-check"></i> Basic Support</li>
+            <li><i class="fas fa-check"></i> 24/7 Support</li>
+          </ul>
+          <a 
+  href="https://discord.gg/xzSgqmjFkJ" 
+  target="_blank" 
+  class="btn btn-buy">
+  Select Plan
+</a>
+
+        </div>
+
+        <div class="pricing-card">
+          <h3>Premium Panel</h3>
+          <div class="price">$30<span>/life time</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Aimbot Head</li>
+            <li><i class="fas fa-check"></i> Aimbot Neck</li>
+            <li><i class="fas fa-check"></i> Aimbot Drag</li>
+            <li><i class="fas fa-check"></i> Advanced ESP</li>
+            <li><i class="fas fa-check"></i> Sniper Scope</li>
+            <li><i class="fas fa-check"></i> Female Fix</li>
+            <li><i class="fas fa-check"></i> Camera Left</li>
+            <li><i class="fas fa-check"></i> Fast Landing</li>
+            <li><i class="fas fa-check"></i> Emulator Bypass</li>
+            <li><i class="fas fa-check"></i> Sniper Faster Switch</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+            <li><i class="fas fa-check"></i> 24/7 Premium Support</li>
+          </ul>
+          <a  href="https://discord.gg/xzSgqmjFkJ" 
+  target="_blank" 
+  class="btn btn-buy">
+  Select Plan</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Player Testimonials</h2>
+        <p>See what our users are saying about DARK NET XD</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "This tool completely changed my gaming experience. I went from average to top rank in just two weeks. The aimbot is incredibly smooth and natural."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">JD</div>
+            <div class="author-info">
+              <h4>John Doe</h4>
+              <p>Professional Gamer</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "I was skeptical at first, but after trying the free trial, I was hooked. The ESP features give me such a tactical advantage in ranked matches."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div class="author-info">
+              <h4>Sarah Miller</h4>
+              <p>Content Creator</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "The customer support is outstanding. They helped me set up everything perfectly. I've been using it for 3 months with zero issues or detections."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">AR</div>
+            <div class="author-info">
+              <h4>Alex Rodriguez</h4>
+              <p>Competitive Player</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about DARK NET XD</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is DARK NET XD detectable?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>No, our advanced anti-detection system ensures that DARK NET XD remains completely undetectable by game security systems. We update our software regularly to maintain this protection.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How often is the software updated?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We release updates within 24 hours of any game patch to ensure compatibility. Our auto-update feature makes sure you're always running the latest version.</p>
+          </div>
+        </div>
+    
+        
+          <div class="faq-answer">
+            <p>Each license is valid for one device. If you need to use DARK NET XD on multiple devices, you'll need to purchase additional licenses.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What payment methods do you accept?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We accept all major credit cards, PayPal, and various cryptocurrencies for your convenience and privacy.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Do you offer refunds?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer a 3-day money-back guarantee if you're not satisfied with the product. Please note that refunds are not available if the software has been detected due to user error.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>DARK NET XD</h3>
+          <p>The ultimate gaming enhancement tool for competitive Free Fire players.</p>
+          <div class="social-links">
+            <!-- Add this <link> in your <head> (loads Font Awesome icons) -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<!-- Place this where you want the icons to appear -->
+<div class="social-links">
+  <a href="https://discord.gg/xzSgqmjFkJ" target="_blank" title="Discord">
+    <i class="fab fa-discord"></i>
+  </a>
+  <a href="https://www.youtube.com/@darknet-q5b" target="_blank" title="YouTube">
+    <i class="fab fa-youtube"></i>
+  </a>
+  <a href="https://t.me/YOURUSERNAME" target="_blank" title="Telegram">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="https://twitter.com/YOURHANDLE" target="_blank" title="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+</div>
+
+<!-- Add this CSS somewhere in your <style> -->
+<style>
+  .social-links {
+    display: flex;
+    gap: 18px;
+    margin-top: 26px;
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    filter: drop-shadow(0 0 4px transparent);
+  }
+
+  .social-links a:hover {
+    color: #00ffff;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px #00ffff);
+  }
+</style>
+
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">System Requirements</a></li>
+            <li><a href="#">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2023 DARK NET XD. All rights reserved. This content is for educational purposes only.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // small interactive bits
+    const panel = document.getElementById('tiltPanel');
+    document.addEventListener('mousemove', (e) => {
+      const rect = panel.getBoundingClientRect();
+      // only apply when cursor is over the panel area horizontally nearby
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = e.clientX - cx;
+      const dy = e.clientY - cy;
+      const rx = (dy / rect.height) * -8; // rotateX
+      const ry = (dx / rect.width) * 12;  // rotateY
+      panel.style.transform = `rotateX(${rx}deg) rotateY(${ry - 18}deg) rotateZ(-4deg) translateZ(10px)`;
+    });
+
+    // reset when mouse leaves
+    panel.addEventListener('mouseleave', () => {
+      panel.style.transform = 'rotateY(-18deg) rotateZ(-4deg) translateZ(0)';
+    });
+
+    // button hooks (demo)
+    document.getElementById('watchBtn').addEventListener('click', () => {
+      window.open('https://www.youtube.com/watch?v=WgJ_pdtdTQk&t=1s', '_blank');
+    });
+
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+      });
+    });
+
+    // tiny entrance animation
+    window.addEventListener('load', () => {
+      document.querySelector('.wrap').style.opacity = 0;
+      setTimeout(() => document.querySelector('.wrap').style.transition = 'opacity .6s ease', 10);
+      setTimeout(() => document.querySelector('.wrap').style.opacity = 1, 40);
+    });
+  </script>
+</body>
+</html>
